@@ -59,7 +59,7 @@
       const img = document.createElement('img');
       img.setAttribute('crossOrigin', 'anonymous');
       img.onload = ready;
-      img.src = options.icon || 'favicon.ico';
+      img.src = options.icon || '/favicon.ico';
       return img;
     };
 
@@ -91,5 +91,18 @@
     };
   })();
 
-  module.exports = Favico;
+  // AMD / RequireJS
+  if (typeof define !== 'undefined' && define.amd) {
+    define([], function () {
+      return Favico;
+    });
+  }
+  // CommonJS
+  else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Favico;
+  }
+  // included directly via <script> tag
+  else {
+    this.Favico = Favico;
+  }
 })();
