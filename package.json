@@ -5,7 +5,8 @@
   "main": "favico.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "eslint favico.js"
+    "dist": "babel --presets=es2015 favico.js -o dist/favico.js",
+    "lint": "eslint favico.js"
   },
   "repository": {
     "type": "git",
