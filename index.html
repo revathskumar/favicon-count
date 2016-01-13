@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by revathskumar (http://jsbin.com/ceyosi/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Favicon with count</h1>
+  <image id="with-num" width="16px" height="16px" src=""></image>
+  <button onclick="updateCount()">Update</button>
+  <script src="favico.js"></script>
+  <script id="jsbin-javascript">
+  console.clear();
+  window.addEventListener('DOMContentLoaded', function () {
+    console.log('DOMContentLoaded');
+    Favico.setup({
+      icon: 'favicon.png'
+    });
+  });
+
+  function updateCount() {
+    Favico.update(~~(Math.random() * 100))
+  }
+  </script>
+</body>
+</html>
